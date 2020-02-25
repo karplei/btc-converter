@@ -2,12 +2,12 @@
   width: 600px;
 }
 
-.btc-label {
+.converter-label {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 190px 1fr;
 }
 
-.btc-input {
+.converter-input {
   border-radius: 10px;
   border-style: solid;
   border-width: 1px;
