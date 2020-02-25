@@ -1,15 +1,10 @@
 import React from 'react';
-import CurrencyField from '../shared/CurrencyField/CurrencyField';
+import ConverterForm from '../ConverterForm/ConverterForm';
 import './ConverterApp.css';
 
 const ConverterApp = () => (
   <div className="converter-app-container">
-    <div className="converter-form">
-      <CurrencyField
-        currencyName="EUR"
-        value={1500}
-      />
-    </div>
+    <ConverterForm />
   </div>
 );
 

@@ -1,0 +1,18 @@
+.converter-form {
+  width: 600px;
+}
+
+.btc-label {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+}
+
+.btc-input {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  font-size: 17px;
+  padding: 2px 10px;
+  outline: none;
+}
