@@ -5,7 +5,7 @@ import './ConverterForm.css';
 
 const ConverterForm = () => {
   const [btcValue, setBTCValue] = useState(1);
-  const [availableCurrency, visibleCurrency, onCurrencySelect] = useCurrency();
+  const [availableCurrency, visibleCurrency, onCurrencySelect, onCurrencyRemove] = useCurrency();
   return (
     <div className="converter-form">
       <label className="converter-label">
@@ -28,12 +28,24 @@ const ConverterForm = () => {
             value=""
           >
             <option hidden value="" />
-            {availableCurrency.map((currency) => <option value={currency}>{currency}</option>)}
+            {availableCurrency.map((currency) => (
+              <option
+                key={currency}
+                value={currency}
+              >
+                {currency}
+              </option>
+            ))}
           </select>
         </label>
       )}
       {visibleCurrency.map((currency) => (
-        <CurrencyField currencyName={currency} value={btcValue * 1000} />
+        <CurrencyField
+          key={currency}
+          onCurrencyRemove={onCurrencyRemove}
+          currencyName={currency}
+          value={btcValue * 1000}
+        />
       ))}
     </div>
   );

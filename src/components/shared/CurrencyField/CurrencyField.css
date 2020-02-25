@@ -1,4 +1,11 @@
 .currency-field {
   display: grid;
-  grid-template-columns: 190px 1fr;
+  grid-template-columns: 190px 1fr 24px;
+}
+
+.remove-button {
+  border-radius: 10px;
+  border-style: solid;
+  height: 24px;
+  margin: auto;
 }
