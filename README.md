@@ -11,6 +11,3 @@ In the project directory, you can run:
 #### `npm run start` - starts the project
 #### `npm run build` - builds the project
 #### `npm run test` - runs tests
-#### `npm run lint` - runs eslint and sass-lint
-#### `npm run lint:eslint` - runs eslint
-#### `npm run lint:sass-lint` - runs eslint
