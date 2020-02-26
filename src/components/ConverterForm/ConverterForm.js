@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import CurrencyField from '../shared/CurrencyField/CurrencyField';
-import { useCurrency } from '../../utils/CustomHooks';
+import { useCurrency, useCurrencyRates } from '../../utils/CustomHooks';
 import './ConverterForm.css';
 
 const ConverterForm = () => {
   const [btcValue, setBTCValue] = useState(1);
+  const currencyRates = useCurrencyRates();
   const [availableCurrency, visibleCurrency, onCurrencySelect, onCurrencyRemove] = useCurrency();
   return (
     <div className="converter-form">
@@ -42,9 +43,10 @@ const ConverterForm = () => {
       {visibleCurrency.map((currency) => (
         <CurrencyField
           key={currency}
-          onCurrencyRemove={onCurrencyRemove}
+          currencyRates={currencyRates}
           currencyName={currency}
-          value={btcValue * 1000}
+          btcValue={btcValue}
+          onCurrencyRemove={onCurrencyRemove}
         />
       ))}
     </div>

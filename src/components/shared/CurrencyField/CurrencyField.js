@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CurrencyField.css';
 
-const CurrencyField = ({ onCurrencyRemove, currencyName, value }) => {
-  const formattedValue = new Intl.NumberFormat(navigator.language, { style: 'currency', currency: currencyName }).format(value);
+const CurrencyField = ({
+  currencyRates,
+  currencyName,
+  btcValue,
+  onCurrencyRemove
+}) => {
+  const currencyValue = currencyRates[currencyName] * btcValue;
+  const formattedValue = new Intl.NumberFormat(navigator.language, { style: 'currency', currency: currencyName }).format(currencyValue);
   return (
     <div className="currency-row">
       <span>{currencyName}</span>
@@ -20,9 +26,10 @@ const CurrencyField = ({ onCurrencyRemove, currencyName, value }) => {
 };
 
 CurrencyField.propTypes = {
-  onCurrencyRemove: PropTypes.func.isRequired,
+  currencyRates: PropTypes.object.isRequired,
   currencyName: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  btcValue: PropTypes.number.isRequired,
+  onCurrencyRemove: PropTypes.func.isRequired
 };
 
 export default CurrencyField;
