@@ -14,7 +14,7 @@ const ConverterForm = () => {
         <input
           className="converter-input"
           type="number"
-          onChange={(event) => setBTCValue(parseFloat(event.target.value))}
+          onChange={(event) => setBTCValue(parseFloat(event.target.value) || 0)}
           value={btcValue}
           min={0}
         />
