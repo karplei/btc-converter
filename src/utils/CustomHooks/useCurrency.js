@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import useLocalStorage from './useLocalStorage';
 
 const useCurrency = () => {
-  const [availableCurrency, setAvailableCurrency] = useState(['USD', 'EUR', 'GBP']);
-  const [visibleCurrency, setVisibleCurrency] = useState([]);
+  const defaultCurrencyList = ['USD', 'EUR', 'GBP'];
+  const [availableCurrency, setAvailableCurrency] = useLocalStorage('availableCurrencyList', defaultCurrencyList);
+  const [visibleCurrency, setVisibleCurrency] = useState(
+    defaultCurrencyList.filter((currency) => (!availableCurrency.includes(currency)))
+  );
 
   const addCurrency = (currencyArray, newCurrency) => ([...currencyArray, newCurrency]);
   const removeCurrency = (currencyArray, currencyToRemove) => (
