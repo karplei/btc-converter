@@ -4,7 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: 30px;
   color: white;
+}
+
+@media screen and (max-width: 680px) {
+  .converter-app-container {
+    font-size: 22px;
+  }
 }

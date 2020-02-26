@@ -1,10 +1,12 @@
 .converter-form {
+  margin-top: 20vh;
   width: 600px;
 }
 
 .converter-label {
   display: grid;
   grid-template-columns: 190px 1fr;
+  padding: 2px 0;
 }
 
 .converter-input {
@@ -15,4 +17,14 @@
   font-size: 17px;
   padding: 2px 10px;
   outline: none;
+}
+
+@media screen and (max-width: 680px) {
+  .converter-form {
+    width: 100%;
+  }
+
+  .converter-label {
+    grid-template-columns: 140px 1fr;
+  }
 }

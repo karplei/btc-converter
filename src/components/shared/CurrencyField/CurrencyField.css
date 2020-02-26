@@ -1,11 +1,23 @@
-.currency-field {
+.currency-row {
   display: grid;
-  grid-template-columns: 190px 1fr 24px;
+  grid-template-columns: 190px 1fr 25px;
+  padding: 2px 0;
+}
+
+.currency-value {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .remove-button {
   border-radius: 10px;
   border-style: solid;
-  height: 24px;
+  height: 25px;
   margin: auto;
+}
+
+@media screen and (max-width: 680px) {
+  .currency-row {
+    grid-template-columns: 140px 1fr 25px;
+  }
 }
