@@ -9,11 +9,18 @@ const useCurrencyRates = () => {
       return response.json();
     }
 
-    fetchCurrencyRates().then(({ bpi: { USD, EUR, GBP } }) => setCurrencyRates({
-      USD: USD.rate_float,
-      EUR: EUR.rate_float,
-      GBP: GBP.rate_float,
-    }));
+    const getCurrencyRates = () => {
+      fetchCurrencyRates().then(({ bpi: { USD, EUR, GBP } }) => setCurrencyRates({
+        USD: USD.rate_float,
+        EUR: EUR.rate_float,
+        GBP: GBP.rate_float,
+      }));
+    };
+
+    setInterval(() => {
+      getCurrencyRates();
+    }, 60000);
+    getCurrencyRates();
   }, []);
 
   return currencyRates;
